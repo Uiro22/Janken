@@ -2,42 +2,42 @@ puts "じゃんけん、、、"
 
 class Janken
     def janken
-        puts "0(グー)1(チョキ)2(パー)3(戦わない)"
-        @input = gets.chomp.to_i
+    puts "0(グー)1(チョキ)2(パー)3(戦わない)"
+    @input = gets.chomp.to_i
     
-        hand_type = ["グー","チョキ","パー"]
-        @my_hand = @input
-        @pc_hand = rand(0..2)
+    hand_type = ["グー","チョキ","パー"]
+    @my_hand = @input
+    @pc_hand = rand(0..2)
         
-        puts "ホイ！"
-        puts "ーーーーーーーーーーーーーー"
-        puts "あなた: #{hand_type[@my_hand]}を出しました"
-        puts "相手: #{hand_type[@pc_hand]}を出しました"
-        puts "ーーーーーーーーーーーーーー"
+    puts "ホイ！"
+    puts "ーーーーーーーーーーーーーー"
+    puts "あなた: #{hand_type[@my_hand]}を出しました"
+    puts "相手: #{hand_type[@pc_hand]}を出しました"
+    puts "ーーーーーーーーーーーーーー"
         
-        if @my_hand == @pc_hand
-        puts "あいこで"
-        return janken
+    if @my_hand == @pc_hand
+    puts "あいこで"
+    return janken
         
-        elsif (@my_hand == 0 && @pc_hand == 1) || (@my_hand == 1 && @pc_hand == 2) || (@my_hand == 2 && @pc_hand == 0)
-            puts "あなたの勝ちです"
-            @winner = "player"
-            lookoverthere
+    elsif (@my_hand == 0 && @pc_hand == 1) || (@my_hand == 1 && @pc_hand == 2) || (@my_hand == 2 && @pc_hand == 0)
+    puts "あなたの勝ちです"
+    @winner = "player"
+    acchimuitehoi
         
-        elsif (@my_hand == 0 && @pc_hand == 2) || (@my_hand == 1 && @pc_hand == 0) || (@my_hand == 2 && @pc_hand == 1)
-            puts "あなたの負けです"
-            @winner = "pc"
-            lookoverthere
+    elsif (@my_hand == 0 && @pc_hand == 2) || (@my_hand == 1 && @pc_hand == 0) || (@my_hand == 2 && @pc_hand == 1)
+    puts "あなたの負けです"
+    @winner = "pc"
+    acchimuitehoi
             
-        elsif @my_hand == 3
-            puts "また戦いましょう"
-            exit
+    elsif @my_hand == 3
+    puts "また戦いましょう"
+    exit
         
-        end
+    end
     end
 
 
-def lookoverthere
+def acchimuitehoi
     puts "あっち向いて〜"
     puts "０（上）１（下）２（左）３（右）"
     @input_hand = gets.chomp.to_i
@@ -63,9 +63,9 @@ def lookoverthere
     end
 end
 
-janken_result = true
-while janken_result
-  game = Janken.new()
-  janken_result = game.janken
-end
+    janken_result = true
+    while janken_result
+    game = Janken.new()
+    janken_result = game.janken
+    end
 end
